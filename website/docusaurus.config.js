@@ -46,13 +46,11 @@ const config = {
       {
         debug: true,
         resolve: {
-          modules: [resolve('node_modules'), resolve('../node_modules')],
+          modules: [resolve('node_modules')],
           alias: {
             'website-examples': resolve('../examples/website'),
             'a5': resolve('../modules/'),
             'a5-internal': resolve('../modules/internal/'),
-            react: resolve('node_modules/react'),
-            'react-dom': resolve('node_modules/react-dom')
           }
         },
         module: {
