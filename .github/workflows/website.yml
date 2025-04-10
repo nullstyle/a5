@@ -12,20 +12,18 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Enable Corepack
-        run: corepack enable
+      - name: Enable Volta
+        uses: volta-cli/action@v4
 
       - name: Install dependencies
         run: |
-          yarn set version 4.7.0
-          yarn config set enableGlobalCache false
-          yarn install --immutable
+          yarn install
           yarn build
 
       - name: Build website
         run: |
           cd website
-          yarn install --immutable
+          yarn install
           yarn build
 
       - name: Deploy
