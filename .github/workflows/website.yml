@@ -15,11 +15,6 @@ jobs:
       - name: Enable Corepack
         run: corepack enable
 
-      - name: Use Node.js
-        uses: actions/setup-node@1d0ff469b7ec7b3cb9d8673fde0c81c44821de2a # v4.2.0
-        with:
-          node-version: '22.x'
-
       - name: Install dependencies
         run: |
           yarn set version 4.7.0
@@ -30,11 +25,7 @@ jobs:
       - name: Build website
         run: |
           cd website
-          yarn config set enableGlobalCache false
           yarn install --immutable
-          # Create a symlink to ensure React is available in the docs directory
-          ln -sf node_modules/react ../node_modules/react
-          ln -sf node_modules/react-dom ../node_modules/react-dom
           yarn build
 
       - name: Deploy
