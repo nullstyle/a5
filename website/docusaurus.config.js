@@ -23,6 +23,10 @@ const config = {
   projectName: 'a5', // Usually your repo name.
   trailingSlash: false,
 
+  customFields: {
+    nodeModulesPath: resolve(__dirname, 'node_modules')
+  },
+
   webpack: {
     jsLoader: (isServer) => ({
       loader: 'babel-loader',
@@ -40,7 +44,14 @@ const config = {
           ]
         ]
       }
-    })
+    }),
+    configure: (webpackConfig) => {
+      webpackConfig.resolve.modules = [
+        resolve(__dirname, 'node_modules'),
+        ...webpackConfig.resolve.modules
+      ];
+      return webpackConfig;
+    }
   },
 
   presets: [
