@@ -46,18 +46,25 @@ const config = {
       {
         debug: true,
         resolve: {
-          modules: [resolve('node_modules'), resolve('../node_modules')],
+          modules: [resolve('node_modules')],
           alias: {
             'website-examples': resolve('../examples/website'),
             'a5': resolve('../modules/'),
             'a5-internal': resolve('../modules/internal/'),
-            react: resolve('node_modules/react'),
-            'react-dom': resolve('node_modules/react-dom')
+            'react': resolve('node_modules/react'),
+            'react-dom': resolve('node_modules/react-dom'),
+            '@react-three/fiber': resolve('node_modules/@react-three/fiber'),
+            '@react-three/drei': resolve('node_modules/@react-three/drei'),
+            'three': resolve('node_modules/three'),
+            'maplibre-gl': resolve('node_modules/maplibre-gl'),
+            '@deck.gl/core': resolve('node_modules/@deck.gl/core'),
+            '@deck.gl/layers': resolve('node_modules/@deck.gl/layers'),
+            '@deck.gl/react': resolve('node_modules/@deck.gl/react'),
+            'react-map-gl': resolve('node_modules/react-map-gl')
           }
         },
         module: {
           rules: [
-            // https://github.com/Esri/calcite-components/issues/2865
             {
               test: /\.m?js/,
               resolve: {
