@@ -30,7 +30,11 @@ jobs:
       - name: Build website
         run: |
           cd website
+          yarn config set enableGlobalCache false
           yarn install --immutable
+          # Create a symlink to ensure React is available in the docs directory
+          ln -sf node_modules/react ../node_modules/react
+          ln -sf node_modules/react-dom ../node_modules/react-dom
           yarn build
 
       - name: Deploy
