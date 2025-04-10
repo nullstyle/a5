@@ -1,14 +1,10 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 import {themes as prismThemes} from 'prism-react-renderer';
-import {fileURLToPath} from 'url';
-import {dirname, resolve} from 'path';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
 const lightCodeTheme = prismThemes.nightOwlLight;
 const darkCodeTheme = prismThemes.nightOwl;
+
+const {resolve} = require('path');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -45,6 +41,33 @@ const config = {
   ],
 
   plugins: [
+    [
+      './ocular-docusaurus-plugin',
+      {
+        debug: true,
+        resolve: {
+          modules: [resolve('node_modules'), resolve('../node_modules')],
+          alias: {
+            'website-examples': resolve('../examples/website'),
+            'a5': resolve('../modules/'),
+            'a5-internal': resolve('../modules/internal/'),
+            react: resolve('node_modules/react'),
+            'react-dom': resolve('node_modules/react-dom')
+          }
+        },
+        module: {
+          rules: [
+            // https://github.com/Esri/calcite-components/issues/2865
+            {
+              test: /\.m?js/,
+              resolve: {
+                fullySpecified: false
+              }
+            }
+          ]
+        }
+      }
+    ],
     [
       '@docusaurus/plugin-content-docs',
       {
