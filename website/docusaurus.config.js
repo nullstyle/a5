@@ -23,37 +23,6 @@ const config = {
   projectName: 'a5', // Usually your repo name.
   trailingSlash: false,
 
-  customFields: {
-    nodeModulesPath: resolve(__dirname, 'node_modules')
-  },
-
-  webpack: {
-    jsLoader: (isServer) => ({
-      loader: 'babel-loader',
-      options: {
-        plugins: [
-          [
-            'babel-plugin-module-resolver',
-            {
-              alias: {
-                'website-examples': resolve(__dirname, '../examples/website'),
-                'a5': resolve(__dirname, '../modules/'),
-                'a5-internal': resolve(__dirname, '../modules/internal/')
-              }
-            }
-          ]
-        ]
-      }
-    }),
-    configure: (webpackConfig) => {
-      webpackConfig.resolve.modules = [
-        resolve(__dirname, 'node_modules'),
-        ...webpackConfig.resolve.modules
-      ];
-      return webpackConfig;
-    }
-  },
-
   presets: [
     [
       'classic',
