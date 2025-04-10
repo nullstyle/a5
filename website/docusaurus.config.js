@@ -4,7 +4,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 const lightCodeTheme = prismThemes.nightOwlLight;
 const darkCodeTheme = prismThemes.nightOwl;
 
-const {resolve, join} = require('path');
+const {resolve} = require('path');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -25,7 +25,7 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          path: join('..', 'docs'),
+          path: '../docs',
           sidebarPath: resolve('./src/docs-sidebar.js'),
           // Point to to the website directory in your repo.
           editUrl: 'https://github.com/felixpalmer/a5/tree/master/website'
@@ -46,25 +46,18 @@ const config = {
       {
         debug: true,
         resolve: {
-          modules: [resolve('node_modules')],
+          modules: [resolve('node_modules'), resolve('../node_modules')],
           alias: {
-            'website-examples': resolve(join('..', 'examples', 'website')),
-            'a5': resolve(join('..', 'modules')),
-            'a5-internal': resolve(join('..', 'modules', 'internal')),
-            'react': resolve(join('node_modules', 'react')),
-            'react-dom': resolve(join('node_modules', 'react-dom')),
-            '@react-three/fiber': resolve(join('node_modules', '@react-three', 'fiber')),
-            '@react-three/drei': resolve(join('node_modules', '@react-three', 'drei')),
-            'three': resolve(join('node_modules', 'three')),
-            'maplibre-gl': resolve(join('node_modules', 'maplibre-gl')),
-            '@deck.gl/core': resolve(join('node_modules', '@deck.gl', 'core')),
-            '@deck.gl/layers': resolve(join('node_modules', '@deck.gl', 'layers')),
-            '@deck.gl/react': resolve(join('node_modules', '@deck.gl', 'react')),
-            'react-map-gl': resolve(join('node_modules', 'react-map-gl'))
+            'website-examples': resolve('../examples/website'),
+            'a5': resolve('../modules/'),
+            'a5-internal': resolve('../modules/internal/'),
+            react: resolve('node_modules/react'),
+            'react-dom': resolve('node_modules/react-dom')
           }
         },
         module: {
           rules: [
+            // https://github.com/Esri/calcite-components/issues/2865
             {
               test: /\.m?js/,
               resolve: {
@@ -79,11 +72,11 @@ const config = {
       '@docusaurus/plugin-content-docs',
       {
         id: 'examples',
-        path: join('src', 'examples'),
+        path: './src/examples',
         routeBasePath: 'examples',
-        sidebarPath: resolve(join('src', 'examples-sidebar.js')),
+        sidebarPath: resolve('./src/examples-sidebar.js'),
         breadcrumbs: false,
-        docItemComponent: resolve(join('src', 'components', 'example', 'doc-item-component.jsx'))
+        docItemComponent: resolve('./src/components/example/doc-item-component.jsx')
       }
     ]
   ],
