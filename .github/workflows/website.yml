@@ -21,10 +21,13 @@ jobs:
       - name: Install dependencies
         run: |
           yarn
-          (cd website && yarn)
+          yarn build
 
       - name: Build website
-        run: (cd website && yarn build)
+        run: |
+          cd website
+          yarn
+          yarn build
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
