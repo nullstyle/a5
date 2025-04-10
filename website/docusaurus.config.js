@@ -19,6 +19,26 @@ const config = {
   projectName: 'a5', // Usually your repo name.
   trailingSlash: false,
 
+  webpack: {
+    jsLoader: (isServer) => ({
+      loader: require.resolve('babel-loader'),
+      options: {
+        plugins: [
+          [
+            require.resolve('babel-plugin-module-resolver'),
+            {
+              alias: {
+                'website-examples': resolve(__dirname, '../examples/website'),
+                'a5': resolve(__dirname, '../modules/'),
+                'a5-internal': resolve(__dirname, '../modules/internal/')
+              }
+            }
+          ]
+        ]
+      }
+    })
+  },
+
   presets: [
     [
       'classic',
@@ -41,31 +61,6 @@ const config = {
   ],
 
   plugins: [
-    [
-      './ocular-docusaurus-plugin',
-      {
-        debug: true,
-        resolve: {
-          modules: [resolve('node_modules')],
-          alias: {
-            'website-examples': resolve('../examples/website'),
-            'a5': resolve('../modules/'),
-            'a5-internal': resolve('../modules/internal/'),
-          }
-        },
-        module: {
-          rules: [
-            // https://github.com/Esri/calcite-components/issues/2865
-            {
-              test: /\.m?js/,
-              resolve: {
-                fullySpecified: false
-              }
-            }
-          ]
-        }
-      }
-    ],
     [
       '@docusaurus/plugin-content-docs',
       {
