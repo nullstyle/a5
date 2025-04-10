@@ -1,10 +1,14 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 import {themes as prismThemes} from 'prism-react-renderer';
+import {fileURLToPath} from 'url';
+import {dirname, resolve} from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
 const lightCodeTheme = prismThemes.nightOwlLight;
 const darkCodeTheme = prismThemes.nightOwl;
-
-const {resolve} = require('path');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -21,25 +25,16 @@ const config = {
 
   webpack: {
     jsLoader: (isServer) => ({
-      loader: require.resolve('babel-loader'),
+      loader: 'babel-loader',
       options: {
         plugins: [
           [
-            require.resolve('babel-plugin-module-resolver'),
+            'babel-plugin-module-resolver',
             {
               alias: {
                 'website-examples': resolve(__dirname, '../examples/website'),
                 'a5': resolve(__dirname, '../modules/'),
                 'a5-internal': resolve(__dirname, '../modules/internal/')
-              },
-              resolvePath: (sourcePath, currentFile, opts) => {
-                // First try to resolve from the website's node_modules
-                try {
-                  return require.resolve(sourcePath, { paths: [resolve(__dirname, 'node_modules')] });
-                } catch (e) {
-                  // If not found, try the default resolution
-                  return require.resolve(sourcePath);
-                }
               }
             }
           ]
