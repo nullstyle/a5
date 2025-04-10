@@ -22,13 +22,15 @@ jobs:
 
       - name: Install dependencies
         run: |
-          yarn
+          yarn set version stable
+          yarn config set enableGlobalCache false
+          yarn install
           yarn build
 
       - name: Build website
         run: |
           cd website
-          yarn
+          yarn install
           yarn build
 
       - name: Deploy
