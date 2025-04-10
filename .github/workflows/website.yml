@@ -22,15 +22,15 @@ jobs:
 
       - name: Install dependencies
         run: |
-          yarn set version stable
+          yarn set version 4.7.0
           yarn config set enableGlobalCache false
-          yarn install
+          yarn install --immutable
           yarn build
 
       - name: Build website
         run: |
           cd website
-          yarn install
+          yarn install --immutable
           yarn build
 
       - name: Deploy
