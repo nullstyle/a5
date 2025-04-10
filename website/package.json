@@ -1,0 +1,57 @@
+{
+  "name": "project-website",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Website for A5 project",
+  "scripts": {
+    "docusaurus": "docusaurus",
+    "start": "docusaurus start",
+    "build": "./scripts/build.sh prod",
+    "build-staging": "./scripts/build.sh staging",
+    "clear": "docusaurus clear",
+    "serve": "docusaurus serve"
+  },
+  "dependencies": {
+    "@deck.gl/aggregation-layers": "^9.1.0",
+    "@deck.gl/carto": "^9.1.0",
+    "@deck.gl/core": "^9.1.0",
+    "@deck.gl/extensions": "^9.1.0",
+    "@deck.gl/geo-layers": "^9.1.0",
+    "@deck.gl/layers": "^9.1.0",
+    "@deck.gl/mapbox": "^9.1.0",
+    "@deck.gl/mesh-layers": "^9.1.0",
+    "@deck.gl/react": "^9.1.0",
+    "@deck.gl/widgets": "^9.1.0",
+    "@material-ui/core": "^4.10.2",
+    "@material-ui/icons": "^4.9.1",
+    "@react-three/drei": "^9.97.0",
+    "@react-three/fiber": "^8.18.0",
+    "@types/three": "^0.174.0",
+    "@vis.gl/react-maplibre": "^1.0.0-alpha.5",
+    "d3-color": "^3.1.0",
+    "maplibre-gl": "^5.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-map-gl": "^8.0.0",
+    "react-virtualized-auto-sizer": "^1.0.2",
+    "styled-components": "^5.3.3",
+    "three": "^0.174.0"
+  },
+  "devDependencies": {
+    "@docusaurus/core": "^3.6.3",
+    "@docusaurus/plugin-content-docs": "^3.6.3",
+    "@docusaurus/preset-classic": "^3.6.3",
+    "@mdx-js/react": "^3.1.0",
+    "babel-plugin-styled-components": "^2.0.0",
+    "prism-react-renderer": "^2.3.0",
+    "ts-node": "~10.9.1"
+  },
+  "browserslist": [
+    ">0.2% and supports async-functions",
+    "not dead"
+  ],
+  "volta": {
+    "node": "18.19.0",
+    "yarn": "1.22.19"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "a5-aggregate-cli",
+  "version": "1.0.0",
+  "description": "CLI tool to aggregate CSV data by A5 cell IDs",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "a5-js": "latest",
+    "csv-parse": "^5.5.3"
+  }
+} 

@@ -1,0 +1,30 @@
+[
+  {
+    "type": "category",
+    "label": "Overview",
+    "items": [
+      "README",
+      "motivation"
+    ]
+  },
+  {
+    "type": "category",
+    "label": "API Reference",
+    "items": [
+      "api-reference/README",
+      "api-reference/indexing",
+      "api-reference/hierarchy"
+    ]
+  },
+  {
+    "type": "category",
+    "label": "Technical Details",
+    "items": [
+      "technical/the-pentagon-that-could",
+      "technical/platonic-solids",
+      "technical/dggs",
+      "technical/cell-area",
+      "technical/index-encoding"
+    ]
+  }
+]

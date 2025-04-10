@@ -1,0 +1,32 @@
+import React, {Component} from 'react';
+import {GITHUB_TREE} from '../constants/defaults';
+import App from 'website-examples/globe/app';
+
+import {makeExample} from '../components';
+
+class GlobeDemo extends Component {
+  static title = 'Globe';
+
+  static code = `${GITHUB_TREE}/examples/website/globe`;
+
+  static parameters = {};
+
+  static renderInfo(meta) {
+    return (
+      <div>
+        <p>Globe</p>
+        <p>Texture: <a href="https://visibleearth.nasa.gov/collection/1484/blue-marble">NASA Blue Marble</a></p>
+      </div>
+    );
+  }
+
+  render() {
+    return (
+      <div style={{width: '100%', height: '100%', position: 'absolute', background: '#aaa'}}>
+        <App {...this.props} />
+      </div>
+    );
+  }
+}
+
+export default makeExample(GlobeDemo); 
