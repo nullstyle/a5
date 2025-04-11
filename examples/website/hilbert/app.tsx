@@ -66,7 +66,7 @@ const App: React.FC = () => {
     igetColor: [235, 235, 255],
     getColor: colorBins({
       attr: d => Math.floor(d.properties.index / (CELLS_PER_FACE)),
-      colors: 'Bold',
+      colors: 'Pastel',
       domain: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
     }),
     widthUnits: 'pixels',
@@ -144,7 +144,7 @@ const App: React.FC = () => {
         projection="globe"
         id="map"
         initialViewState={INITIAL_VIEW_STATE}
-        mapStyle="https://basemaps.cartocdn.com/gl/voyager-gl-style/style.json"
+        mapStyle="https://basemaps.cartocdn.com/gl/dark-matter-nolabels-gl-style/style.json"
       >
         <DeckGLOverlay layers={[layer, cellLayer]} interleaved />
       </Map>

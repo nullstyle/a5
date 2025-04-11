@@ -174,6 +174,7 @@ const App: React.FC = () => {
       <Maplibre
         id="map"
         initialViewState={INITIAL_VIEW_STATE}
+        projection="globe"
         mapStyle="https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json"
       >
         <DeckGLOverlay 
