@@ -12,16 +12,27 @@ export const ExampleHeader = styled.div`
   border-bottom: 1px solid 20px;
   display: inline-block;
   padding: 20px 20px 4px 0;
+  @media screen and (max-width: 632px) {
+    margin: 0;
+    font-size: 18px;
+    line-height: 26px;
+  }
 `;
 
 export const MainExamples = styled.main`
   padding: 16px 0;
+  @media screen and (max-width: 632px) {
+    padding: 0;
+  }
 `;
 
 export const ExamplesGroup = styled.main`
   display: flex;
   flex-wrap: wrap;
   padding: 16px;
+  @media screen and (max-width: 632px) {
+    padding: 0;
+  }
 `;
 
 export const ExampleCard = styled.a`
@@ -46,10 +57,17 @@ export const ExampleCard = styled.a`
   }
   ${isMobile} {
     width: 33%;
-    min-width: 200px;
+    min-width: 150px;
   }
   @media screen and (max-width: 632px) {
     width: 50%;
+    min-width: 150px;
+    padding: 2px;
+  }
+  @media screen and (max-width: 320px) {
+    width: 50%;
+    min-width: 140px;
+    padding: 1px;
   }
 `;
 
