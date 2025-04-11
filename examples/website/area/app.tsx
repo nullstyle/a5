@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import {createRoot} from 'react-dom/client';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import {Map, useControl, useMap} from 'react-map-gl/maplibre';
@@ -539,7 +539,7 @@ const Legend: React.FC<{
   );
 };
 
-const App: React.FC = () => {
+const App: React.FC<{ isMobile?: boolean }> = ({ isMobile = false }) => {
   // Initial view state
   const INITIAL_VIEW_STATE = {
     longitude: 0,
@@ -705,12 +705,14 @@ const App: React.FC = () => {
         tilingSystem={tilingSystem}
         onTilingSystemChange={handleTilingSystemChange}
       />
-      <CellVisualization 
-        tilingSystem={tilingSystem}
-        h3Output={h3Output}
-        a5Output={a5Output}
-        onCellHover={handleCellHover}
-      />
+      {!isMobile && (
+        <CellVisualization 
+          tilingSystem={tilingSystem}
+          h3Output={h3Output}
+          a5Output={a5Output}
+          onCellHover={handleCellHover}
+        />
+      )}
       <Legend 
         areaLimits={areaLimits}
         h3AreaLimits={h3AreaLimits}
