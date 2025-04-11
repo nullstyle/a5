@@ -484,24 +484,26 @@ const Legend: React.FC<{
         padding: '4px 0'
       }}>
         <div style={{
-          transition: 'transform 1s ease-in-out',
-          transform: `translateY(${visibleStart}%)`,
+          position: 'absolute',
+          top: `${visibleStart}%`,
           background: 'white',
           padding: '2px 4px',
           borderRadius: '2px',
           boxShadow: '0 1px 2px rgba(0,0,0,0.1)',
-          whiteSpace: 'nowrap'
+          whiteSpace: 'nowrap',
+          transition: 'top 1s ease-in-out'
         }}>
           {minArea.toFixed(2)} km²
         </div>
         <div style={{
-          transition: 'transform 1s ease-in-out',
-          transform: `translateY(${visibleEnd - 100}%)`,
+          position: 'absolute',
+          top: `${visibleEnd}%`,
           background: 'white',
           padding: '2px 4px',
           borderRadius: '2px',
           boxShadow: '0 1px 2px rgba(0,0,0,0.1)',
-          whiteSpace: 'nowrap'
+          whiteSpace: 'nowrap',
+          transition: 'top 1s ease-in-out'
         }}>
           {maxArea.toFixed(2)} km²
         </div>
