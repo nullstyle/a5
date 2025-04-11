@@ -30,7 +30,6 @@ const App: React.FC = () => {
   // Common layer props
   const commonLayerProps = {
     data: DATA,
-    beforeId: 'watername_ocean',
     parameters: { cullMode: 'back', depthCompare: 'always' } as any,
     extensions: [new DataFilterExtension({filterSize: 1})],
     getFilterValue: (d, info) => info.index,
