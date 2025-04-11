@@ -78,23 +78,21 @@ export default function IndexPage() {
               <img src={`${baseUrl}images/pentagon.svg`} />Pentagonal Discrete Global Grid System
             </h3>
             <p>
-              A5 is a DGGS that is designed to be used as a global geospatial index.
-              It is the pentagonal equivalent of other DDGSs, like <a href="http://s2geometry.io/">S2</a> or <a href="https://h3geo.org/">H3</a>.
+              A5 is a global geospatial index. It is the pentagonal equivalent of other DGGSs, like <a href="http://s2geometry.io/">S2</a> or <a href="https://h3geo.org/">H3</a>, but with higher accuracy and lower distortion.
+            </p>
+
+            <h3>
+              <img src={`${baseUrl}images/pentagon.svg`} />Flexible representation of geospatial data
+            </h3>
+            <p>
+              A5 is used for representing points, lines, and polygons in a unified cell format, which is well suited for combining datasets and aggregating data.
             </p>
 
             <h3>
               <img src={`${baseUrl}images/pentagon.svg`} />Uniform Cell Sizes with Minimal Distortion
             </h3>
             <p>
-              Compared to other DDGSs, where cell size at a given resolution varies by a factor of 2,
-              A5 cells vary by only 2% at a given resolution.
-            </p>
-
-            <h3>
-              <img src={`${baseUrl}images/pentagon.svg`} />Compact Representation
-            </h3>
-            <p>
-              A5 cells are stored as a 64-bit integers, with a maximum resolution of less than 1cm<sup>2</sup>.
+              Data from all around the world can be directly compared due to the practically equal areas of all A5 cells.
             </p>
           </TextContainer>
         </div>
