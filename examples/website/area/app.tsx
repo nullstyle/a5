@@ -473,6 +473,39 @@ const Legend: React.FC<{
           transition: 'top 1s ease-in-out, height 1s ease-in-out'
         }} />
       </div>
+      <div style={{
+        position: 'absolute',
+        left: '40px',
+        top: '0',
+        bottom: '0',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+        padding: '4px 0'
+      }}>
+        <div style={{
+          transition: 'transform 1s ease-in-out',
+          transform: `translateY(${visibleStart}%)`,
+          background: 'white',
+          padding: '2px 4px',
+          borderRadius: '2px',
+          boxShadow: '0 1px 2px rgba(0,0,0,0.1)',
+          whiteSpace: 'nowrap'
+        }}>
+          {minArea.toFixed(2)} km²
+        </div>
+        <div style={{
+          transition: 'transform 1s ease-in-out',
+          transform: `translateY(${visibleEnd - 100}%)`,
+          background: 'white',
+          padding: '2px 4px',
+          borderRadius: '2px',
+          boxShadow: '0 1px 2px rgba(0,0,0,0.1)',
+          whiteSpace: 'nowrap'
+        }}>
+          {maxArea.toFixed(2)} km²
+        </div>
+      </div>
     </div>
   );
 };
