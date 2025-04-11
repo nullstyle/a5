@@ -5,7 +5,7 @@ import App from 'website-examples/hilbert/app';
 import {makeExample} from '../components';
 
 class HilbertDemo extends Component {
-  static title = 'Hilbert Curve';
+  static title = 'Global Hilbert Curve';
 
   static code = `${GITHUB_TREE}/examples/website/hilbert`;
 
@@ -15,6 +15,9 @@ class HilbertDemo extends Component {
     return (
       <div>
         <p>Illustration of Hilbert curve across all the cells on the globe</p>
+        <p>Individual Hilbert curves for the 60 quintants are stiched together to complete a closed circuit.</p>
+        <p>The ordering of the curve is carefully chosen to place the land masses first, followed by the oceans.</p>
+        <p>Thus 99.9% of the world's population is contained in the first two thirds of the curve.</p>
       </div>
     );
   }

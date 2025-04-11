@@ -151,6 +151,7 @@ const App: React.FC<{showCellId?: boolean}> = ({showCellId = true}) => {
             <span style={{ fontWeight: 'bold', color: '#FF0066' }}>{resolutionSection}</span>
             <span style={{ fontWeight: 'bold', color: '#999999' }}>{zeroSection}</span>
           </div>
+          <div>Cell ID (Hex): {`0x${data.cellId.toString(16).padStart(16, '0')}`}</div>
           <div>Resolution: {resolution}</div>
           <div>Location: [{cellLocation[0].toFixed(4)}, {cellLocation[1].toFixed(4)}]</div>
         </div>

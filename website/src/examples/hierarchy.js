@@ -15,6 +15,9 @@ class HierarchyDemo extends Component {
     return (
       <div>
         <p>A visualization of the A5 pentagon hierarchy on a globe.</p>
+        <p>Zooming in/out on the page will change the resolution level of the pentagon at the center of the map.</p>
+        <p>Click any location on the globe to see the pentagon hierarchy at that location.</p>
+        <p>Notice how cells at similar locations have similar cell ids.</p>
       </div>
     );
   }

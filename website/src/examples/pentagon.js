@@ -14,8 +14,8 @@ class PentagonDemo extends Component {
   static renderInfo(meta) {
     return (
       <div>
-        <p>A5 Lattice Explorer</p>
-        <p>Shows the relationship between the triangles in the A5 lattice and the pentagon tiling and how they are indexed by the Hilbert curve.</p>
+        <p>Irregular Pentagon</p>
+        <p>With two of the angles being 72° and 108°, the remaining three can be calculated by intersecting the arcs traced by the rigid edges of the pentagon.</p>
       </div>
     );
   }

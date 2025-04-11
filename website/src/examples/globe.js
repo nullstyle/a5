@@ -15,6 +15,9 @@ class GlobeDemo extends Component {
     return (
       <div>
         <p>Globe</p>
+        <p>Visualization of how the globe is mapped onto the faces of the dodecahedron.</p>
+        <p>By varying the longitudal offset, different regions can be place in different faces.</p>
+        <p>The chosen offset maximizes the amount of land mass in the first 8 faces, with the remaining 4 faces being mostly uninhabited.</p>
         <p>Texture: <a href="https://visibleearth.nasa.gov/collection/1484/blue-marble">NASA Blue Marble</a></p>
       </div>
     );

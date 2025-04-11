@@ -10,7 +10,7 @@ Cells can also be used to group (aggregate) point data, to understand how it spa
 
 To understand how it works, take a look at the [Examples](/examples).
 
-A5 is implemented in TypeScript and is available as a library, with [API documentation here](/api-reference/). It is open source and licensed under the [Apache 2.0 License](https://www.apache.org/licenses/LICENSE-2.0.txt).
+A5 is implemented in TypeScript and is available as a library, with [API documentation here](/docs/api-reference/). It is open source and licensed under the [Apache 2.0 License](https://www.apache.org/licenses/LICENSE-2.0.txt).
 
 <img src={A5Preview} style={{width: "100%", maxWidth: "800px"}}/>
 
