@@ -266,17 +266,17 @@ const CellVisualization: React.FC<{
       padding: '12px',
       borderRadius: '4px',
       boxShadow: '0 2px 4px rgba(0,0,0,0.2)',
-      zIndex: 1,
+      zIndex: 10,
       display: 'flex',
       flexDirection: 'column',
       gap: '10px',
-      maxWidth: '400px'
+      maxWidth: '300px'
     }}>
       <h3 style={{margin: '0 0 8px', fontSize: '14px', textAlign: 'center'}}>Cell Comparison</h3>
       
-      <div style={{display: 'flex', gap: '20px', alignItems: 'flex-start'}}>
+      <div style={{display: 'flex', gap: '10px', alignItems: 'flex-start'}}>
         <div>
-          <p style={{margin: '0 0 5px', fontSize: '12px', textAlign: 'center'}}>Smallest Cell</p>
+          <p style={{margin: '0 0 5px', fontSize: '12px', textAlign: 'left'}}>Smallest Cell</p>
           <svg 
             width="100" 
             height="100" 
@@ -287,7 +287,7 @@ const CellVisualization: React.FC<{
           >
             <path d={smallestPath} fill="#6baed6" stroke="#000" strokeWidth="1" />
           </svg>
-          <p style={{margin: '5px 0 0', fontSize: '10px', textAlign: 'center'}}>
+          <p style={{margin: '5px 0 0', fontSize: '10px', textAlign: 'left'}}>
             {currentSmallest.properties.area.toFixed(2)} km²
           </p>
           <div style={{marginTop: '5px', fontSize: '10px'}}>
@@ -301,7 +301,7 @@ const CellVisualization: React.FC<{
         </div>
         
         <div>
-          <p style={{margin: '0 0 5px', fontSize: '12px', textAlign: 'center'}}>Largest Cell</p>
+          <p style={{margin: '0 0 5px', fontSize: '12px', textAlign: 'left'}}>Largest Cell</p>
           <svg 
             width="100" 
             height="100" 
@@ -312,7 +312,7 @@ const CellVisualization: React.FC<{
           >
             <path d={largestPath} fill="#fd8d3c" stroke="#000" strokeWidth="1" />
           </svg>
-          <p style={{margin: '5px 0 0', fontSize: '10px', textAlign: 'center'}}>
+          <p style={{margin: '5px 0 0', fontSize: '10px', textAlign: 'left'}}>
             {currentLargest.properties.area.toFixed(2)} km²
           </p>
           <div style={{marginTop: '5px', fontSize: '10px'}}>
