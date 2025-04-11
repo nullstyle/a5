@@ -84,13 +84,15 @@ function Scene({
   isZoomedIn, 
   onZoomToggle,
   dimpleRadius,
-  dimpleSqueeze
+  dimpleSqueeze,
+  useHD
 }: { 
   dimplePositions: DimplePosition[],
   isZoomedIn: boolean,
   onZoomToggle: () => void,
   dimpleRadius: number,
-  dimpleSqueeze: number
+  dimpleSqueeze: number,
+  useHD: boolean
 }) {
   const {camera} = useThree();
   const [isHovered, setIsHovered] = useState(false);
@@ -112,7 +114,7 @@ function Scene({
   return (
     <>
       <Environment 
-        files="/textures/spruit_sunrise_4k.hdr.jpg"
+        files={useHD ? "/textures/spruit_sunrise_4k.hdr.jpg" : "/textures/spruit_sunrise_1k.hdr"}
         background
         backgroundBlurriness={isZoomedIn ? 0.1 : 0}
         backgroundIntensity={isZoomedIn ? 0.6 : 1}
@@ -203,7 +205,7 @@ function Scene({
   );
 }
 
-const App: React.FC = () => {
+const App: React.FC<{ useHD?: boolean }> = ({ useHD = false }) => {
   const [isZoomedIn, setIsZoomedIn] = useState(false);
   const [useCenterDimples, setUseCenterDimples] = useState(false);
   const toggleZoom = () => setIsZoomedIn(!isZoomedIn);
@@ -276,6 +278,7 @@ const App: React.FC = () => {
             onZoomToggle={toggleZoom}
             dimpleRadius={currentParams.radius}
             dimpleSqueeze={currentParams.squeeze}
+            useHD={useHD}
           />
         </Suspense>
       </Canvas>
