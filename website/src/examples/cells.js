@@ -5,7 +5,7 @@ import App from 'website-examples/cells/app';
 import {makeExample} from '../components';
 
 class CellsDemo extends Component {
-  static title = 'Cells';
+  static title = 'A5 Cells';
 
   static code = `${GITHUB_TREE}/examples/website/cells`;
 
@@ -14,7 +14,7 @@ class CellsDemo extends Component {
   static renderInfo(meta) {
     return (
       <div>
-        <p>Click a location on the map to see the cell for that location.</p>
+        <p>Click a location on the map to add/remove the cell for that location and resolution.</p>
       </div>
     );
   }
