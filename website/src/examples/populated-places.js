@@ -17,7 +17,6 @@ class PopulatedPlacesDemo extends Component {
         <p>Populated places aggregated by A5, and drawn as 3D columns at cell centers.</p>
         <p>Switch to cell mode to see aggregation bounds, source points and cell centers.</p>
         <p>Data: <a href="https://www.naturalearthdata.com/downloads/10m-cultural-vectors/">Natural Earth</a></p>
-across the world</p>
       </div>
     );
   }
