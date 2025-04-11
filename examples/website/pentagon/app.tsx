@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {createRoot} from 'react-dom/client';
 import DeckGL from '@deck.gl/react';
 import {PathLayer, PolygonLayer, ScatterplotLayer, TextLayer} from '@deck.gl/layers';
+import { TRANSITION_EVENTS } from '@deck.gl/core';
 import { mat2d, vec2 } from 'gl-matrix';
 
 import { PENTAGON } from 'a5/core/pentagon';
@@ -88,7 +89,8 @@ const App: React.FC = () => {
   const transitionConfig = {
     type: 'spring',
     stiffness: 0.02,
-    damping: 0.2
+    damping: 0.2,
+    transitionInterruption: TRANSITION_EVENTS.IGNORE
   }
   firstRender = false;
 
