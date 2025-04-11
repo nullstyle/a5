@@ -29,6 +29,7 @@ export const PanelContainer = styled.div`
     ${props => !props.$expanded && `
       background: transparent;
       box-shadow: none;
+      pointer-events: none;
     `}
   }
 `;
@@ -58,6 +59,7 @@ export const PanelExpander = styled.div`
     border-radius: 32px;
     padding: 4px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    pointer-events: auto;
   }
 `;
 
