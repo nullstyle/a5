@@ -69,8 +69,8 @@ function InfoPanel({title, children, sourceLink}) {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
-    <PanelContainer>
-      <PanelTitle onClick={() => setIsExpanded(!isExpanded)}>
+    <PanelContainer $expanded={isExpanded}>
+      <PanelTitle onClick={() => setIsExpanded(!isExpanded)} $expanded={isExpanded}>
         <div>{title}</div>
         <PanelExpander $expanded={isExpanded}>{isExpanded ? '✕' : 'i'}</PanelExpander>
       </PanelTitle>

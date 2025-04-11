@@ -25,6 +25,10 @@ export const PanelContainer = styled.div`
   ${isMobile} {
     width: auto;
     left: 0;
+    ${props => !props.$expanded && `
+      background: transparent;
+      box-shadow: none;
+    `}
   }
 `;
 
@@ -55,6 +59,7 @@ export const PanelTitle = styled.div`
     > div:first-child {
       display: none;
     }
+    justify-content: flex-end;
   }
 `;
 
