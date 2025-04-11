@@ -73,7 +73,7 @@ export const GetStartedLink = styled.a`
   transition: background-color 250ms ease-in, color 250ms ease-in;
   background-color: var(--ifm-color-primary-lightest);
   border: solid 2px var(--ifm-color-primary);
-  color: var(--ifm-color-primary);
+  color: var(--ifm-color-gray-900);
   border-image: linear-gradient(
     to right,
     var(--ifm-color-gray-700) 0%,
@@ -81,9 +81,6 @@ export const GetStartedLink = styled.a`
   );
   border-image-slice: 2;
   width: fit-content;
-  &:visited {
-    color: var(--ifm-color-gray-900);
-  }
   &:active {
     color: var(--ifm-color-white);
   }
