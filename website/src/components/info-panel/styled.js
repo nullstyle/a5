@@ -69,10 +69,12 @@ export const PanelTitle = styled.div`
   margin: 8px 0;
   ${isMobile} {
     cursor: pointer;
-    > div:first-child {
-      display: none;
-    }
-    justify-content: flex-end;
+    ${props => !props.$expanded && `
+      > div:first-child {
+        display: none;
+      }
+      justify-content: flex-end;
+    `}
   }
 `;
 
