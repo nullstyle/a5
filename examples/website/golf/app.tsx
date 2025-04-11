@@ -227,12 +227,17 @@ const App: React.FC<{ useHD?: boolean }> = ({ useHD = false }) => {
     }}>
       <div style={{
         position: 'absolute',
-        top: '20px',
-        left: '20px',
+        bottom: '20px',
+        left: '50%',
+        transform: 'translateX(-50%)',
         zIndex: 1,
         display: 'flex',
-        flexDirection: 'column',
-        gap: '10px'
+        flexDirection: 'row',
+        gap: '10px',
+        padding: '0 20px',
+        width: '100%',
+        maxWidth: '400px',
+        justifyContent: 'center'
       }}>
         <button 
           onClick={toggleZoom}
@@ -242,7 +247,9 @@ const App: React.FC<{ useHD?: boolean }> = ({ useHD = false }) => {
             border: 'none',
             backgroundColor: '#fff',
             cursor: 'pointer',
-            boxShadow: '0 2px 4px rgba(0,0,0,0.2)'
+            boxShadow: '0 2px 4px rgba(0,0,0,0.2)',
+            minWidth: '120px',
+            whiteSpace: 'nowrap'
           }}
         >
           {isZoomedIn ? 'Zoom Out' : 'Zoom In'}
@@ -256,7 +263,9 @@ const App: React.FC<{ useHD?: boolean }> = ({ useHD = false }) => {
             border: 'none',
             backgroundColor: '#fff',
             cursor: 'pointer',
-            boxShadow: '0 2px 4px rgba(0,0,0,0.2)'
+            boxShadow: '0 2px 4px rgba(0,0,0,0.2)',
+            minWidth: '120px',
+            whiteSpace: 'nowrap'
           }}
         >
           {useCenterDimples ? 'Vertex Dimples' : 'Center Dimples'}
