@@ -33,7 +33,7 @@ const Controls: React.FC<{
   return (
     <div style={{
       position: 'absolute',
-      top: '20px',
+      top: '50px',
       left: '60px',
       background: 'white',
       padding: '12px',
@@ -507,7 +507,7 @@ const Legend: React.FC<{
             borderBottom: '4px solid transparent',
             borderRight: '6px solid white'
           }} />
-          {minArea.toFixed(2)} km²
+          {Math.round(minArea)} km²
         </div>
         <div style={{
           position: 'absolute',
@@ -532,7 +532,7 @@ const Legend: React.FC<{
             borderBottom: '4px solid transparent',
             borderRight: '6px solid white'
           }} />
-          {maxArea.toFixed(2)} km²
+          {Math.round(maxArea)} km²
         </div>
       </div>
     </div>
@@ -549,7 +549,7 @@ const App: React.FC = () => {
     bearing: 0
   };
 
-  const [tilingSystem, setTilingSystem] = useState<'a5' | 'h3'>('a5');
+  const [tilingSystem, setTilingSystem] = useState<'a5' | 'h3'>('h3');
   const [areaLimits, setAreaLimits] = useState<[number, number]>(h3AreaLimits);
   const [perimeterLimits, setPerimeterLimits] = useState<[number, number]>(h3PerimeterLimits);
   const [hoveredCell, setHoveredCell] = useState<any>(null);
