@@ -475,13 +475,14 @@ const Legend: React.FC<{
       </div>
       <div style={{
         position: 'absolute',
-        left: '40px',
+        left: '32px',
         top: '0',
         bottom: '0',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-between',
-        padding: '4px 0'
+        padding: '0',
+        margin: '10px 0'
       }}>
         <div style={{
           position: 'absolute',
@@ -491,8 +492,21 @@ const Legend: React.FC<{
           borderRadius: '2px',
           boxShadow: '0 1px 2px rgba(0,0,0,0.1)',
           whiteSpace: 'nowrap',
-          transition: 'top 1s ease-in-out'
+          transition: 'top 1s ease-in-out',
+          transform: 'translateY(-50%)',
+          marginLeft: '4px'
         }}>
+          <div style={{
+            position: 'absolute',
+            left: '-6px',
+            top: '50%',
+            transform: 'translateY(-50%)',
+            width: 0,
+            height: 0,
+            borderTop: '4px solid transparent',
+            borderBottom: '4px solid transparent',
+            borderRight: '6px solid white'
+          }} />
           {minArea.toFixed(2)} km²
         </div>
         <div style={{
@@ -503,8 +517,21 @@ const Legend: React.FC<{
           borderRadius: '2px',
           boxShadow: '0 1px 2px rgba(0,0,0,0.1)',
           whiteSpace: 'nowrap',
-          transition: 'top 1s ease-in-out'
+          transition: 'top 1s ease-in-out',
+          transform: 'translateY(-50%)',
+          marginLeft: '4px'
         }}>
+          <div style={{
+            position: 'absolute',
+            left: '-6px',
+            top: '50%',
+            transform: 'translateY(-50%)',
+            width: 0,
+            height: 0,
+            borderTop: '4px solid transparent',
+            borderBottom: '4px solid transparent',
+            borderRight: '6px solid white'
+          }} />
           {maxArea.toFixed(2)} km²
         </div>
       </div>
