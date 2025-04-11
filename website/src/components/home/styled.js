@@ -32,6 +32,10 @@ export const BannerContainer = styled(Container)`
   padding-left: 4rem;
   z-index: 0;
   pointer-events: none;
+  ${isMobile} {
+    pointer-events: auto;
+    padding-left: 2rem;
+  }
 `;
 
 export const HeroExampleContainer = styled.div`

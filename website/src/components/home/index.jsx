@@ -8,27 +8,12 @@ import {Banner, BannerContainer, HeroExampleContainer, ProjectName, GetStartedLi
 import styled from 'styled-components';
 import {isMobile} from '../common';
 
-const EventBlocker = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(200, 0, 0, 0.5);
-  pointer-events: none;
-  z-index: 0;
-  ${isMobile} {
-    pointer-events: auto;
-  }
-`;
-
 export default function renderPage({HeroExample, children}) {
   const {siteConfig} = useDocusaurusContext();
 
   // Note: The Layout "wrapper" component adds header and footer etc
   return (
     <>
-      <EventBlocker />
       <Banner>
         <HeroExampleContainer>{HeroExample && <HeroExample />}</HeroExampleContainer>
         <BannerContainer>
