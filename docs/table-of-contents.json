@@ -9,22 +9,20 @@
   },
   {
     "type": "category",
+    "label": "Technical Details",
+    "items": [
+      "technical/dggs",
+      "technical/the-pentagon-that-could",
+      "technical/platonic-solids"
+    ]
+  },
+  {
+    "type": "category",
     "label": "API Reference",
     "items": [
       "api-reference/README",
       "api-reference/indexing",
       "api-reference/hierarchy"
-    ]
-  },
-  {
-    "type": "category",
-    "label": "Technical Details",
-    "items": [
-      "technical/the-pentagon-that-could",
-      "technical/platonic-solids",
-      "technical/dggs",
-      "technical/cell-area",
-      "technical/index-encoding"
     ]
   }
 ]

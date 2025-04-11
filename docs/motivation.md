@@ -13,4 +13,4 @@ A related problem is how to tile a sphere, with the obvious application of parti
 
 ## The Quest for a Pentagonal Tiling
 
-The motivation for the A5 system was this. To see if a [pentagonal tiling](./technical/the-pentagon-that-could) on a sphere could be found that, perhaps yeilding characteristics superior to those of existing tilings.
+The motivation for the A5 system was this. To see if a [pentagonal tiling](./technical/the-pentagon-that-could) on a sphere could be found, perhaps even yielding characteristics superior to those of existing tilings.
