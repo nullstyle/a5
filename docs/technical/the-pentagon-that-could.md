@@ -7,7 +7,7 @@ It is a commonly known result that the regular pentagon cannot tile a 2D plane. 
 
 ## Rotational symmetry
 
-Of particular interest for the purposes of A5, is a pentagonal tiling which has a five-fold rotational symmetry. As shown in the aforementioned paper, such a tiling must have two non-adjacent angles 72° and 108°. With these fixed, there is only one equilateral pentagon that, as this [example](/examples/pentagon) demonstrates.
+Of particular interest for the purposes of A5, is a pentagonal tiling which has a five-fold rotational symmetry. As shown in the aforementioned paper, such a tiling must have two non-adjacent angles 72° and 108°. With these fixed, all the other angles can be deduced from the fact that the sides are equilateral, as this [example](/examples/pentagon) demonstrates.
 
 <img src={PentagonImage} style={{width: "100%", maxWidth: "640px"}}/>
 
