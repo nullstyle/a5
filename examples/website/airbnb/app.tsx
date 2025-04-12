@@ -176,7 +176,7 @@ const MapView: React.FC<{
 };
 
 const App: React.FC = () => {
-  const [viewType, setViewType] = useState<ViewType>('h3');
+  const [viewType, setViewType] = useState<ViewType>('a5');
   const [aggregatedData, setAggregatedData] = useState<{
     malta: AggregatedData;
     oslo: AggregatedData;
