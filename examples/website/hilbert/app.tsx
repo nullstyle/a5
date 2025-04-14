@@ -144,6 +144,8 @@ const App: React.FC = () => {
         id="map"
         initialViewState={INITIAL_VIEW_STATE}
         mapStyle="https://basemaps.cartocdn.com/gl/dark-matter-nolabels-gl-style/style.json"
+        dragRotate={false}
+        maxPitch={0}
       >
         <DeckGLOverlay layers={[layer, cellLayer]} interleaved />
       </Map>

@@ -176,6 +176,8 @@ const App: React.FC = () => {
         initialViewState={INITIAL_VIEW_STATE}
         projection="globe"
         mapStyle="https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json"
+        dragRotate={false}
+        maxPitch={0}
       >
         <DeckGLOverlay 
           layers={[cellLayer, columnLayer, ...pointLayers]}
