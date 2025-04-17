@@ -129,20 +129,37 @@ export function cellToChildren(index: bigint, childResolution?: number): bigint[
     throw new Error(`Target resolution (${newResolution}) exceeds maximum resolution (${MAX_RESOLUTION})`);
   }
 
-  const resolutionDiff = newResolution - currentResolution;
+
+  let newOrigins: Origin[] = [origin];
+  let newSegments: number[] = [segment];
+  if (currentResolution === 0) {
+    newOrigins = origins;
+  }
+  if (
+    (currentResolution === 0 && newResolution > 1)
+    || currentResolution === 1
+    ) {
+    newSegments = [0, 1, 2, 3, 4];
+  }
+
+  const resolutionDiff = newResolution - Math.max(currentResolution, FIRST_HILBERT_RESOLUTION - 1);
   const childrenCount = Math.pow(4, resolutionDiff);
   const children: bigint[] = [];
   const shiftedS = S << BigInt(2 * resolutionDiff);
-  for (let i = 0; i < childrenCount; i++) {
-    const newS = shiftedS + BigInt(i);
-    children.push(serialize({origin, segment, S: newS, resolution: newResolution}));
+  for (const newOrigin of newOrigins) {
+    for (const newSegment of newSegments) {
+      for (let i = 0; i < childrenCount; i++) {
+        const newS = shiftedS + BigInt(i);
+        children.push(serialize({origin: newOrigin, segment: newSegment, S: newS, resolution: newResolution}));
+      }
+    }
   }
   
   return children;
 }
 
 export function cellToParent(index: bigint, parentResolution?: number): bigint {
-  const currentResolution = getResolution(index);
+  const {origin, segment, S, resolution: currentResolution} = deserialize(index);
   const newResolution = parentResolution ?? currentResolution - 1;
 
   if (newResolution < 0) {
@@ -153,26 +170,7 @@ export function cellToParent(index: bigint, parentResolution?: number): bigint {
     throw new Error(`Target resolution (${newResolution}) must be less than current resolution (${currentResolution})`);
   }
 
-  if (currentResolution < FIRST_HILBERT_RESOLUTION) {
-    // Current is non-Hilbert - just update resolution bits
-    const stamp = BigInt(newResolution);
-    return (index & ~(0b11n << 56n)) | (stamp << 56n);
-  } else if (newResolution < FIRST_HILBERT_RESOLUTION) {
-    // Current is Hilbert, target is non-Hilbert - convert to non-Hilbert format
-    const base = index & ORIGIN_SEGMENT_MASK;
-    const stamp = BigInt(newResolution);
-    return base | (stamp << 56n);
-  } else {
-    // Both current and target are Hilbert
-    const R = BigInt(2 * (newResolution - FIRST_HILBERT_RESOLUTION));
-    const ZEROES = HILBERT_START_BIT - R - 1n;
-    
-    // Mask away bits of unneeded resolution
-    const mask = (ALL_ONES >> ZEROES) << ZEROES;
-    let parent = index & mask;
-
-    // Set the new resolution bit
-    parent |= 1n << ZEROES;
-    return parent;
-  }
+  const resolutionDiff = currentResolution - newResolution;
+  const shiftedS = S >> BigInt(2 * resolutionDiff);
+  return serialize({origin, segment, S: shiftedS, resolution: newResolution});
 }
