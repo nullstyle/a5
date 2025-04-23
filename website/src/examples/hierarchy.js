@@ -14,10 +14,10 @@ class HierarchyDemo extends Component {
   static renderInfo(meta) {
     return (
       <div>
-        <p>A visualization of the A5 pentagon hierarchy on a globe.</p>
-        <p>Zooming in/out on the page will change the resolution level of the pentagon at the center of the map.</p>
-        <p>Click any location on the globe to see the pentagon hierarchy at that location.</p>
-        <p>Notice how cells at similar locations have similar cell ids.</p>
+        <p>A5 cells for a given location on the globe.</p>
+        <p>Zoom in/out to change the resolution level of the A5 pentagon at the center of the map.</p>
+        <p>Click to see the pentagon hierarchy at that location. Notice how cells at similar locations have similar cell ids.</p>
+        <p>Parent cells do not exactly cover children cells, but are guaranteed to be close.</p>
       </div>
     );
   }
