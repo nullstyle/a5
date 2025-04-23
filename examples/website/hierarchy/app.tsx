@@ -3,7 +3,7 @@ import {createRoot} from 'react-dom/client';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import {Map} from 'react-map-gl/maplibre';
 import {ScatterplotLayer, ArcLayer, LineLayer} from '@deck.gl/layers';
-import {lonLatToCell, cellToBoundary} from 'a5';
+import {lonLatToCell, cellToBoundary, cellToChildren} from 'a5';
 import DeckGL from '@deck.gl/react';
 import {MapView} from '@deck.gl/core';
 
@@ -19,6 +19,7 @@ const A5GREEN_DARK = [0, 128, 64] as [number, number, number];
 const App: React.FC<{showCellId?: boolean}> = ({showCellId = true}) => {
   const [viewState, setViewState] = useState(INITIAL_VIEW_STATE);
   const [cellLocation, setCellLocation] = useState([INITIAL_VIEW_STATE.longitude, INITIAL_VIEW_STATE.latitude]);
+  const [showChildren, setShowChildren] = useState(false);
 
   const onViewStateChange = useCallback(({viewState}) => {
     const [longitude, latitude] = cellLocation;
@@ -38,8 +39,9 @@ const App: React.FC<{showCellId?: boolean}> = ({showCellId = true}) => {
   // Memoize the entire cells calculation
   const data = useMemo(() => {
     const cellId = lonLatToCell(cellLocation, resolution);
-    return {cellId, children: [cellId]};
-  }, [resolution, cellLocation]);
+    const children = showChildren ? cellToChildren(cellId) : [];
+    return {cellId, children: [cellId, ...children]};
+  }, [resolution, cellLocation, showChildren]);
 
   // Convert cell boundaries to great circle arcs
   const arcs = useMemo(() => {
@@ -54,14 +56,19 @@ const App: React.FC<{showCellId?: boolean}> = ({showCellId = true}) => {
     }).flat();
   }, [data.children]);
 
+  const getColor = (_, info) => {
+    console.log(info);
+    return info.index < 5 ? A5GREEN : [160, 160, 160, 255];
+  }
+
   const polygonProps: any = {
     data: arcs,
     getSourcePosition: d => d.source,
     getTargetPosition: d => d.target,
-    getSourceColor: A5GREEN,
-    getTargetColor: A5GREEN,
-    getColor: A5GREEN,
-    getWidth: 2,
+    getSourceColor: getColor,
+    getTargetColor: getColor,
+    getColor: getColor,
+    getWidth: (_, info) => info.index < 5 ? 2 : 1,
     getHeight: 0,
     greatCircle: true,
     widthUnits: 'pixels'
@@ -154,6 +161,16 @@ const App: React.FC<{showCellId?: boolean}> = ({showCellId = true}) => {
           <div>Cell ID (Hex): {`0x${data.cellId.toString(16).padStart(16, '0')}`}</div>
           <div>Resolution: {resolution}</div>
           <div>Location: [{cellLocation[0].toFixed(4)}, {cellLocation[1].toFixed(4)}]</div>
+          <div style={{ marginTop: '10px' }}>
+            <label>
+              <input
+                type="checkbox"
+                checked={showChildren}
+                onChange={(e) => setShowChildren(e.target.checked)}
+              />
+              Show children
+            </label>
+          </div>
         </div>
       )}
     </>
