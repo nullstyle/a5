@@ -59,7 +59,6 @@ const App: React.FC<{showCellId?: boolean}> = ({showCellId = true}) => {
   }, [data.children]);
 
   const getColor = (_, info) => {
-    console.log(info);
     return info.index < 5 ? A5GREEN : [160, 160, 160, 255];
   }
 
