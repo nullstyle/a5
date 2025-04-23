@@ -3,7 +3,7 @@ import {createRoot} from 'react-dom/client';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import {Map} from 'react-map-gl/maplibre';
 import {ScatterplotLayer, ArcLayer, LineLayer} from '@deck.gl/layers';
-import {lonLatToCell, cellToBoundary, cellToChildren} from 'a5';
+import {lonLatToCell, cellToBoundary, cellToChildren, cellToParent} from 'a5';
 import DeckGL from '@deck.gl/react';
 import {MapView} from '@deck.gl/core';
 
@@ -20,6 +20,7 @@ const App: React.FC<{showCellId?: boolean}> = ({showCellId = true}) => {
   const [viewState, setViewState] = useState(INITIAL_VIEW_STATE);
   const [cellLocation, setCellLocation] = useState([INITIAL_VIEW_STATE.longitude, INITIAL_VIEW_STATE.latitude]);
   const [showChildren, setShowChildren] = useState(false);
+  const [showParent, setShowParent] = useState(false);
 
   const onViewStateChange = useCallback(({viewState}) => {
     const [longitude, latitude] = cellLocation;
@@ -40,8 +41,9 @@ const App: React.FC<{showCellId?: boolean}> = ({showCellId = true}) => {
   const data = useMemo(() => {
     const cellId = lonLatToCell(cellLocation, resolution);
     const children = showChildren ? cellToChildren(cellId) : [];
-    return {cellId, children: [cellId, ...children]};
-  }, [resolution, cellLocation, showChildren]);
+    const parent = showParent ? cellToParent(cellId) : null;
+    return {cellId, children: [cellId, ...children, ...(parent ? [parent] : [])]};
+  }, [resolution, cellLocation, showChildren, showParent]);
 
   // Convert cell boundaries to great circle arcs
   const arcs = useMemo(() => {
@@ -162,13 +164,21 @@ const App: React.FC<{showCellId?: boolean}> = ({showCellId = true}) => {
           <div>Resolution: {resolution}</div>
           <div>Location: [{cellLocation[0].toFixed(4)}, {cellLocation[1].toFixed(4)}]</div>
           <div style={{ marginTop: '10px' }}>
-            <label>
+            <label style={{ marginRight: '15px' }}>
               <input
                 type="checkbox"
                 checked={showChildren}
                 onChange={(e) => setShowChildren(e.target.checked)}
               />
               Show children
+            </label>
+            <label>
+              <input
+                type="checkbox"
+                checked={showParent}
+                onChange={(e) => setShowParent(e.target.checked)}
+              />
+              Show parent
             </label>
           </div>
         </div>
