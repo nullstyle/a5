@@ -14,7 +14,7 @@ const config = {
   baseUrl: process.env.STAGING ? '/a5geo.org/' : '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-  favicon: '/favicon.ico',
+  favicon: '/images/pentagon.svg',
   organizationName: 'felixpalmer', // Usually your GitHub org/user name.
   projectName: 'a5', // Usually your repo name.
   trailingSlash: false,
