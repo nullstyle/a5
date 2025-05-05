@@ -2,6 +2,8 @@
 
 ## Website: [A5Geo.org](https://a5geo.org)
 
+<img width="472" alt="thumbnails" src="https://github.com/user-attachments/assets/865d3afa-a4d6-4e86-b814-252587b10ca0" />
+
 ## Introduction
   
 A5 is a geospatial index that partitions the world into [pentagonal cells](https://a5geo.org/examples/teohedron-dodecahedron). The cells are available at [32 different resolution levels](https://a5geo.org/examples/hierarchy), with the largest cell covering the whole world, and the smallest less than 30mm². Within each resolution level the cells have equal area, to [within 2%](https://a5geo.org/examples/area).
