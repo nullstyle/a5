@@ -62,8 +62,8 @@ describe('LonLat to/from spherical', () => {
   it('converts longitude/latitude to spherical coordinates', () => {
     // Test Greenwich equator
     const greenwich = fromLonLat([0, 0] as LonLat)
-    // Match OFFSET_LON: 92
-    expect(greenwich[0]).toBeCloseTo(degToRad(92 as Degrees))
+    // Match OFFSET_LON: 93
+    expect(greenwich[0]).toBeCloseTo(degToRad(93 as Degrees))
     expect(greenwich[1]).toBeCloseTo(Math.PI/2)  // 90° colatitude = equator
 
     // Test north pole
