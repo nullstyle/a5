@@ -7,7 +7,7 @@ export default defineConfig({
   splitting: false,
   sourcemap: true,
   clean: true,
-  external: [/^internal/],
+  external: [/^internal/, 'gl-matrix'],
   outExtension({ format }) {
     return {
       js: format === 'cjs' ? '.cjs' : '.js',
