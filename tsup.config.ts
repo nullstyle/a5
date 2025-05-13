@@ -10,7 +10,7 @@ export default defineConfig({
   external: [/^internal/],
   outExtension({ format }) {
     return {
-      js: format === 'cjs' ? '.js' : '.mjs',
+      js: format === 'cjs' ? '.cjs' : '.js',
     }
   },
 }) 
