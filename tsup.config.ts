@@ -1,7 +1,7 @@
 import { defineConfig } from 'tsup'
 
 export default defineConfig({
-  entry: ['modules/index.ts'],
+  entry: {'a5': 'modules/index.ts'},
   format: ['cjs', 'esm', 'iife'],
   dts: true,
   splitting: false,
@@ -14,5 +14,5 @@ export default defineConfig({
     return {
       js: format === 'cjs' ? '.cjs' : format === 'iife' ? '.umd.js' : '.js',
     }
-  },
+  }
 }) 
