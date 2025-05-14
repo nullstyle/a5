@@ -10,6 +10,12 @@ export default defineConfig({
   external: [/^internal/],
   noExternal: ['gl-matrix'],
   globalName: 'A5',
+  target: 'es2020',
+  esbuildOptions(options) {
+    options.supported = {
+      'bigint': true
+    }
+  },
   outExtension({ format }) {
     return {
       js: format === 'cjs' ? '.cjs' : format === 'iife' ? '.umd.js' : '.js',
