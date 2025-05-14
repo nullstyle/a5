@@ -10,7 +10,6 @@
   },
   "main": "./dist/a5.cjs",
   "module": "./dist/a5.js",
-  "browser": "./dist/a5.umd.js",
   "types": "./dist/a5.d.ts",
   "sideEffects": false,
   "exports": {
@@ -19,6 +18,7 @@
         "types": "./dist/a5.d.ts",
         "default": "./dist/a5.cjs"
       },
+      "browser": "./dist/a5.umd.js",
       "default": {
         "types": "./dist/a5.d.ts",
         "default": "./dist/a5.js"
