@@ -18,7 +18,6 @@
         "types": "./dist/a5.d.ts",
         "default": "./dist/a5.cjs"
       },
-      "browser": "./dist/a5.umd.js",
       "default": {
         "types": "./dist/a5.d.ts",
         "default": "./dist/a5.js"
