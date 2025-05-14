@@ -7,28 +7,36 @@
     "type": "git",
     "url": "https://github.com/felixpalmer/a5.git"
   },
-  "main": "dist/a5.umd.js",
-  "module": "dist/a5.es.js",
-  "types": "dist/index.d.ts",
+  "main": "dist/a5.cjs",
+  "module": "dist/a5.js",
+  "browser": "dist/a5.umd.js",
+  "types": "dist/a5.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/a5.d.ts",
+      "browser": "./dist/a5.umd.js",
+      "import": "./dist/a5.js",
+      "require": "./dist/a5.cjs"
+    }
+  },
   "files": [
     "dist",
     "LICENSE",
     "README.md"
   ],
   "scripts": {
-    "start": "vite --open",
+    "start": "tsup --watch",
     "test": "vitest",
     "coverage": "vitest run --coverage",
-    "build": "vite build --config vite.config.build.ts"
+    "build": "tsup"
   },
   "dependencies": {
     "gl-matrix": "^3.4.3"
   },
   "devDependencies": {
     "node-fetch": "^3.3.1",
+    "tsup": "^8.0.2",
     "typescript": "^5.0.0",
-    "vite": "^4.0.0",
-    "vite-plugin-dts": "^3.7.2",
     "vitest": "^1.3.1"
   },
   "volta": {
