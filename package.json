@@ -3,20 +3,21 @@
   "description": "A5 - Global Pentagonal Geospatial Index",
   "version": "0.1.0",
   "license": "Apache-2.0",
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/felixpalmer/a5.git"
   },
-  "main": "dist/a5.cjs",
-  "module": "dist/a5.js",
-  "browser": "dist/a5.umd.js",
-  "types": "dist/a5.d.ts",
+  "main": "./dist/a5.cjs",
+  "module": "./dist/a5.js",
+  "types": "./dist/a5.d.ts",
+  "sideEffects": false,
   "exports": {
     ".": {
       "types": "./dist/a5.d.ts",
-      "browser": "./dist/a5.umd.js",
       "import": "./dist/a5.js",
-      "require": "./dist/a5.cjs"
+      "require": "./dist/a5.cjs",
+      "default": "./dist/a5.js"
     }
   },
   "files": [
