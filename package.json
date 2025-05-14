@@ -15,11 +15,14 @@
   "sideEffects": false,
   "exports": {
     ".": {
-      "types": "./dist/a5.d.ts",
-      "browser": "./dist/a5.umd.js",
-      "import": "./dist/a5.js",
-      "require": "./dist/a5.cjs",
-      "default": "./dist/a5.js"
+      "require": {
+        "types": "./dist/a5.d.ts",
+        "default": "./dist/a5.cjs"
+      },
+      "default": {
+        "types": "./dist/a5.d.ts",
+        "default": "./dist/a5.js"
+      }
     }
   },
   "files": [
