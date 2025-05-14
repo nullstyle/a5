@@ -10,11 +10,13 @@
   },
   "main": "./dist/a5.cjs",
   "module": "./dist/a5.js",
+  "browser": "./dist/a5.umd.js",
   "types": "./dist/a5.d.ts",
   "sideEffects": false,
   "exports": {
     ".": {
       "types": "./dist/a5.d.ts",
+      "browser": "./dist/a5.umd.js",
       "import": "./dist/a5.js",
       "require": "./dist/a5.cjs",
       "default": "./dist/a5.js"
