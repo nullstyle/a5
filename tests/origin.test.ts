@@ -10,7 +10,7 @@ import {
   movePointToFace,
 } from 'a5/core/origin'
 import { distanceToEdge, PI_OVER_5, TWO_PI_OVER_5 } from 'a5/core/constants'
-import { Face, Radians, Spherical } from 'a5/core/types'
+import type { Face, Radians, Spherical } from 'a5/core/types'
 import { toCartesian } from 'a5/core/math'
 
 describe('origin constants', () => {

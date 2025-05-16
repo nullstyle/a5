@@ -2,10 +2,10 @@
 // SPDX-License-Identifier: Apache-2.0
 // Copyright (c) A5 contributors
 
-import { mat2d, vec3, vec2, quat, glMatrix } from "gl-matrix";
+import { vec2, quat, glMatrix } from 'gl-matrix';
 glMatrix.setMatrixArrayType(Float64Array as any);
+import type { Degrees, Radians, Face, Polar, IJ, Cartesian, Spherical, LonLat } from "./types";
 import { BASIS_INVERSE, BASIS } from "./pentagon";
-import { Degrees, Radians, Face, Polar, IJ, Cartesian, Spherical, LonLat } from "./types";
 
 export function degToRad(deg: Degrees): Radians {
   return deg * (Math.PI / 180) as Radians;

@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 import { Contour, Pentagon, PentagonShape } from 'a5/core/utils'
-import { Degrees, LonLat } from 'a5/core/types'
+import type { Degrees, LonLat } from 'a5/core/types'
 
 describe('PentagonShape', () => {
   describe('containsPoint', () => {

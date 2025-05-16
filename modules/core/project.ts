@@ -7,7 +7,7 @@ glMatrix.setMatrixArrayType(Float64Array as any);
 import { PentagonShape } from './utils';
 import { Origin, movePointToFace, findNearestOrigin, isNearestOrigin } from './origin';
 import { projectDodecahedron } from './dodecahedron';
-import { Face, LonLat, Polar, Radians } from './types';
+import type { Face, LonLat, Polar, Radians } from './types';
 import { toLonLat, toPolar } from './math';
 import { PI_OVER_5 } from './constants';
 
