@@ -2,12 +2,13 @@
 // SPDX-License-Identifier: Apache-2.0
 // Copyright (c) A5 contributors
 
-import { mat2, vec2, glMatrix } from 'gl-matrix';
+import { vec2, mat2, glMatrix } from 'gl-matrix';
 glMatrix.setMatrixArrayType(Float64Array as any);
 import { PentagonShape } from './utils';
 import { Origin, movePointToFace, findNearestOrigin, isNearestOrigin } from './origin';
 import { projectDodecahedron } from './dodecahedron';
-import { Face, LonLat, Polar, Radians, toLonLat, toPolar } from './math';
+import type { Face, LonLat, Polar, Radians } from './types';
+import { toLonLat, toPolar } from './math';
 import { PI_OVER_5 } from './constants';
 
 // Reusable matrices to avoid recreation

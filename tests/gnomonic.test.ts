@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 import { projectGnomonic, unprojectGnomonic } from 'a5/core/gnomonic'
-import { Polar, Spherical } from 'a5/core/math'
+import type { Polar, Spherical } from 'a5/core/types'
 import TEST_COORDS from './test-polar-coordinates.json';
 
 describe('projectGnomonic', () => {

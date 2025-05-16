@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 // Copyright (c) A5 contributors
 
-import { Radians, Polar } from './math';
+import type { Radians, Polar } from './types';
 import { distanceToEdge, PI_OVER_5, TWO_PI_OVER_5, WARP_FACTOR } from './constants';
 
 export function normalizeGamma(gamma: Radians): Radians {
