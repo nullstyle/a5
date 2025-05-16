@@ -6,7 +6,7 @@ import {vec2, mat2, mat2d, vec3, glMatrix} from 'gl-matrix';
 glMatrix.setMatrixArrayType(Float64Array as any);
 import { Origin } from './origin';
 import { Triangle } from './triangle';
-import { Degrees, LonLat, Face } from './math';
+import { Degrees, LonLat, Face } from './types';
 
 export type Pentagon = [Face, Face, Face, Face, Face];
 

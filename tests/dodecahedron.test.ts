@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest'
 import { projectDodecahedron, unprojectDodecahedron } from 'a5/core/dodecahedron'
 import { origins } from 'a5/core/origin'
-import { Polar } from 'a5/core/math'
+import { Polar } from 'a5/core/types'
 import TEST_COORDS from './test-polar-coordinates.json';
 
 describe('Dodecahedron projection round trip', () => {

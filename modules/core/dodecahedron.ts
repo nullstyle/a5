@@ -2,9 +2,10 @@
 // SPDX-License-Identifier: Apache-2.0
 // Copyright (c) A5 contributors
 
-import { quat, vec3, glMatrix } from "gl-matrix";
+import { vec3, quat, glMatrix } from "gl-matrix";
 glMatrix.setMatrixArrayType(Float64Array as any);
-import { toCartesian, toSpherical, Radians, Spherical, Cartesian, Polar } from "./math";
+import { toCartesian, toSpherical } from "./math";
+import { Radians, Spherical, Cartesian, Polar } from "./types";
 import { unwarpPolar, warpPolar } from './warp';
 import { projectGnomonic, unprojectGnomonic } from './gnomonic';
 
