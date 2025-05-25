@@ -7,12 +7,12 @@ glMatrix.setMatrixArrayType(Float64Array as any);
 
 // PUBLIC API
 // Indexing
-export {cellToBoundary, cellToLonLat, lonLatToCell} from './core/cell';
-export {hexToBigInt, bigIntToHex} from './core/hex';
+export {cellToBoundary, cellToLonLat, lonLatToCell} from './core/cell.ts';
+export {hexToBigInt, bigIntToHex} from './core/hex.ts';
 
 // Hierarchy
-export {cellToParent, cellToChildren, getResolution} from './core/serialization';
+export {cellToParent, cellToChildren, getResolution} from './core/serialization.ts';
 
 // Types
-export type {Degrees, Radians} from './core/coordinate-systems';
-export type {A5Cell} from './core/utils';
+export type {Degrees, Radians} from './core/coordinate-systems.ts';
+export type {A5Cell} from './core/utils.ts';

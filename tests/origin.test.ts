@@ -1,4 +1,5 @@
-import { describe, it, expect } from 'vitest'
+import { describe, it } from "jsr:@std/testing/bdd";
+import { expect } from "jsr:@std/expect";
 import { vec2, vec3, quat } from 'gl-matrix'
 import {
   origins,
@@ -8,10 +9,10 @@ import {
   quintantToSegment,
   segmentToQuintant,
   movePointToFace,
-} from 'a5/core/origin'
-import { distanceToEdge, PI_OVER_5, TWO_PI_OVER_5 } from 'a5/core/constants'
-import type { Face, Radians, Spherical } from 'a5/core/coordinate-systems'
-import { toCartesian } from 'a5/core/coordinate-transforms'
+} from '../modules/core/origin.ts'
+import { distanceToEdge, PI_OVER_5, TWO_PI_OVER_5 } from '../modules/core/constants.ts'
+import type { Face, Radians, Spherical } from '../modules/core/coordinate-systems.ts'
+import { toCartesian } from '../modules/core/coordinate-transforms.ts'
 
 describe('origin constants', () => {
   it('has 12 origins for dodecahedron faces', () => {

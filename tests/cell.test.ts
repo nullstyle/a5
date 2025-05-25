@@ -1,6 +1,7 @@
-import { describe, it, expect } from 'vitest'
-import { cellToBoundary, cellToLonLat, lonLatToCell } from 'a5/core/cell'
+import { describe, it } from "jsr:@std/testing/bdd";
+import { expect } from "jsr:@std/expect";
+import { cellToBoundary, cellToLonLat, lonLatToCell } from "../modules/core/cell.ts";
 
-describe('cell', () => {
-  it('passes', () => {})
-})
+describe("cell", () => {
+  it("passes", () => {});
+});

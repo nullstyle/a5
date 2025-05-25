@@ -2,9 +2,8 @@
 // SPDX-License-Identifier: Apache-2.0
 // Copyright (c) A5 contributors
 
-import { A5Cell } from "./utils";
-import { Origin } from './utils';
-import { origins } from "./origin";
+import { A5Cell } from "./utils.ts";
+import { Origin, origins } from "./origin.ts";
 
 export const FIRST_HILBERT_RESOLUTION = 3;
 export const MAX_RESOLUTION = 31;

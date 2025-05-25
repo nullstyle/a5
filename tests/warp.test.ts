@@ -1,9 +1,9 @@
-import { describe, it, expect } from 'vitest'
-import { warpPoint, unwarpPoint } from 'a5/core/warp'
-import { normalizeGamma, warpPolar, unwarpPolar, warpBeta, unwarpBeta } from 'a5/core/warp'
-import { PI_OVER_5, PI_OVER_10, TWO_PI_OVER_5, distanceToEdge } from 'a5/core/constants'
-import type { Radians, Polar } from 'a5/core/coordinate-systems'
-import TEST_COORDS from './test-polar-coordinates.json';
+import { describe, it } from "jsr:@std/testing/bdd";
+import { expect } from "jsr:@std/expect";
+import { normalizeGamma, warpPolar, unwarpPolar, warpBeta, unwarpBeta } from '../modules/core/warp.ts';
+import { PI_OVER_5, PI_OVER_10, TWO_PI_OVER_5, distanceToEdge } from '../modules/core/constants.ts';
+import type { Radians, Polar } from '../modules/core/coordinate-systems.ts';
+import TEST_COORDS from './test-polar-coordinates.json' with { type: 'json' };
 
 describe('normalizeGamma', () => {
   const TEST_VALUES = [

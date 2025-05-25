@@ -2,8 +2,8 @@
 // SPDX-License-Identifier: Apache-2.0
 // Copyright (c) A5 contributors
 
-import type { Radians, Polar } from './coordinate-systems';
-import { distanceToEdge, PI_OVER_5, TWO_PI_OVER_5, WARP_FACTOR } from './constants';
+import type { Radians, Polar } from './coordinate-systems.ts';
+import { distanceToEdge, PI_OVER_5, TWO_PI_OVER_5, WARP_FACTOR } from './constants.ts';
 
 export function normalizeGamma(gamma: Radians): Radians {
   const segment = gamma / TWO_PI_OVER_5;

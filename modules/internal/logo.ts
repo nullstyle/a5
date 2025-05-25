@@ -4,7 +4,7 @@
 
 import { vec2, glMatrix } from "gl-matrix";
 glMatrix.setMatrixArrayType(Float64Array as any);
-import { a, b, c, d, e } from "./pentagon";
+import { a, b, c, d, e } from "../core/pentagon.ts";
 
 function generatePentagonSVG(): string {
     // Define canvas size.

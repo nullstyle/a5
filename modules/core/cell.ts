@@ -5,16 +5,16 @@
 import { mat2, vec2, glMatrix } from "gl-matrix";
 glMatrix.setMatrixArrayType(Float64Array as any);
 
-import type { Face, LonLat } from "./coordinate-systems";
-import { FaceToIJ, fromLonLat, toFace } from "./coordinate-transforms";
-import { findNearestOrigin, quintantToSegment, segmentToQuintant } from "./origin";
-import { unprojectDodecahedron } from "./dodecahedron";
-import { A5Cell, PentagonShape } from "./utils";
-import { getFaceVertices, getPentagonVertices, getQuintant, getQuintantVertices } from "./tiling";
-import { PI_OVER_5 } from "./constants";
-import { IJToS, sToAnchor } from "./hilbert";
-import { projectPentagon, projectPoint } from "./project";
-import { deserialize, serialize, FIRST_HILBERT_RESOLUTION } from "./serialization";
+import type { Face, LonLat } from "./coordinate-systems.ts";
+import { FaceToIJ, fromLonLat, toFace } from "./coordinate-transforms.ts";
+import { findNearestOrigin, quintantToSegment, segmentToQuintant } from "./origin.ts";
+import { unprojectDodecahedron } from "./dodecahedron.ts";
+import { A5Cell, PentagonShape } from "./utils.ts";
+import { getFaceVertices, getPentagonVertices, getQuintant, getQuintantVertices } from "./tiling.ts";
+import { PI_OVER_5 } from "./constants.ts";
+import { IJToS, sToAnchor } from "./hilbert.ts";
+import { projectPentagon, projectPoint } from "./project.ts";
+import { deserialize, serialize, FIRST_HILBERT_RESOLUTION } from "./serialization.ts";
 
 // Reuse these objects to avoid allocation
 const rotation = mat2.create();

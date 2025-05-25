@@ -4,7 +4,7 @@
 
 import { vec2, glMatrix } from 'gl-matrix';
 glMatrix.setMatrixArrayType(Float64Array as any);
-import { IJ, KJ } from './coordinate-systems';
+import { IJ, KJ } from './coordinate-systems.ts';
 
 export type Quaternary = 0 | 1 | 2 | 3;
 export const YES = -1 as const;
@@ -78,7 +78,7 @@ export const quaternaryToFlips = (n: Quaternary): [Flip, Flip] => {
 
 const FLIP_SHIFT = vec2.fromValues(-1, 1) as IJ;
 
-export const sToAnchor = (s: number | bigint, resolution: number, orientation: Orientation): Anchor => {
+export const sToAnchor = (s: number | bigint, resolution: number = 0, orientation: Orientation = 'uv'): Anchor => {
   let input = BigInt(s);
   const reverse = orientation === 'vu' || orientation === 'wu' || orientation === 'vw';
   const invertJ = orientation === 'wv' || orientation === 'vw';
@@ -167,7 +167,7 @@ export const IJtoQuaternary = ([u, v]: IJ, flips: [Flip, Flip]): Quaternary => {
   return digit;
 }
 
-export const IJToS = (input: IJ, resolution: number, orientation: Orientation = 'uv'): bigint => {
+export const IJToS = (input: IJ, resolution: number = 0, orientation: Orientation = 'uv'): bigint => {
   const reverse = orientation === 'vu' || orientation === 'wu' || orientation === 'vw';
   const invertJ = orientation === 'wv' || orientation === 'vw';
   const flipIJ = orientation === 'wu' || orientation === 'uw';

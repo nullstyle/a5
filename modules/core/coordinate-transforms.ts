@@ -4,8 +4,8 @@
 
 import { vec2, quat, glMatrix } from 'gl-matrix';
 glMatrix.setMatrixArrayType(Float64Array as any);
-import type { Degrees, Radians, Face, Polar, IJ, Cartesian, Spherical, LonLat } from "./coordinate-systems";
-import { BASIS_INVERSE, BASIS } from "./pentagon";
+import type { Degrees, Radians, Face, Polar, IJ, Cartesian, Spherical, LonLat } from "./coordinate-systems.ts";
+import { BASIS_INVERSE, BASIS } from "./pentagon.ts";
 
 export function degToRad(deg: Degrees): Radians {
   return deg * (Math.PI / 180) as Radians;

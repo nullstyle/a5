@@ -1,9 +1,10 @@
-import { describe, it, expect, test } from 'vitest'
-import { getResolution, serialize, deserialize, MAX_RESOLUTION, REMOVAL_MASK, FIRST_HILBERT_RESOLUTION } from 'a5/core/serialization';
-import { A5Cell } from 'a5/core/utils';
-import { origins } from 'a5/core/origin';
-import TEST_IDS from './test-ids.json';
-import { cellToParent, cellToChildren } from 'a5/core/serialization';
+import { describe, it, test } from "jsr:@std/testing/bdd";
+import { expect } from "jsr:@std/expect";
+import { getResolution, serialize, deserialize, MAX_RESOLUTION, REMOVAL_MASK, FIRST_HILBERT_RESOLUTION } from '../modules/core/serialization.ts';
+import { A5Cell } from '../modules/core/utils.ts';
+import { origins } from '../modules/core/origin.ts';
+import TEST_IDS from './test-ids.json' with { type: 'json' };
+import { cellToParent, cellToChildren } from '../modules/core/serialization.ts';
 
 const RESOLUTION_MASKS = [
   // Non-Hilbert resolutions

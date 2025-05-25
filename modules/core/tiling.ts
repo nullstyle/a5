@@ -4,10 +4,10 @@
 
 import { mat2, vec2, glMatrix } from "gl-matrix";
 glMatrix.setMatrixArrayType(Float64Array as any);
-import { Pentagon, PentagonShape } from "./utils";
-import { a, BASIS, PENTAGON, TRIANGLE, v, V, w } from "./pentagon";
-import { TWO_PI, TWO_PI_OVER_5 } from "./constants";
-import { NO, Anchor, YES } from "./hilbert";
+import { Pentagon, PentagonShape } from "./utils.ts";
+import { a, BASIS, PENTAGON, TRIANGLE, v, V, w } from "./pentagon.ts";
+import { TWO_PI, TWO_PI_OVER_5 } from "./constants.ts";
+import { NO, Anchor, YES } from "./hilbert.ts";
 
 const TRIANGLE_MODE = false;
 

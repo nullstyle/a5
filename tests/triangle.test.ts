@@ -1,5 +1,6 @@
-import { describe, it, expect } from 'vitest';
-import { Triangle } from 'a5/core/triangle';
+import { describe, it } from "jsr:@std/testing/bdd";
+import { expect } from "jsr:@std/expect";
+import { Triangle } from '../modules/core/triangle.ts';
 import { vec2 } from 'gl-matrix';
 
 describe('Triangle', () => {

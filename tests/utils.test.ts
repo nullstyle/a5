@@ -1,6 +1,7 @@
-import { describe, it, expect } from 'vitest'
-import { Contour, Pentagon, PentagonShape } from 'a5/core/utils'
-import type { Degrees, LonLat } from 'a5/core/coordinate-systems'
+import { describe, it } from "jsr:@std/testing/bdd";
+import { expect } from "jsr:@std/expect";
+import { Contour, Pentagon, PentagonShape } from '../modules/core/utils.ts'
+import type { Degrees, LonLat } from '../modules/core/coordinate-systems.ts'
 
 describe('PentagonShape', () => {
   describe('containsPoint', () => {

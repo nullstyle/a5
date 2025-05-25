@@ -1,6 +1,8 @@
-import { describe, it, expect, test } from 'vitest'
+import { describe, it, test } from "jsr:@std/testing/bdd";
+import { expect } from "jsr:@std/expect";
 import { vec2 } from 'gl-matrix';
-import { quaternaryToKJ, quaternaryToFlips, YES, NO, Anchor, Quaternary, IJToKJ, KJToIJ, getRequiredDigits, IJToS, sToAnchor, IJ, KJ, Orientation } from 'a5/core/hilbert';
+import { quaternaryToKJ, quaternaryToFlips, YES, NO, Quaternary, IJToKJ, KJToIJ, getRequiredDigits, IJToS, sToAnchor, Orientation } from '../modules/core/hilbert.ts';
+import { type IJ, type KJ } from '../modules/core/coordinate-systems.ts';
 
 describe('hilbert anchor generation', () => {
     it('returns correct offsets for base cases', () => {

@@ -4,11 +4,19 @@
 
 import { vec2, vec3, quat, glMatrix } from 'gl-matrix';
 glMatrix.setMatrixArrayType(Float64Array as any);
-import { toCartesian, quatFromSpherical } from "./coordinate-transforms";
-import type { Radians, Spherical, Cartesian, Face } from "./coordinate-systems";
-import { interhedralAngle, PI_OVER_5, TWO_PI_OVER_5, distanceToEdge } from './constants';
-import { Orientation } from "./hilbert";
-import type { Origin } from './utils';
+import { toCartesian, quatFromSpherical } from "./coordinate-transforms.ts";
+import type { Radians, Spherical, Cartesian, Face } from "./coordinate-systems.ts";
+import { interhedralAngle, PI_OVER_5, TWO_PI_OVER_5, distanceToEdge } from './constants.ts';
+import { Orientation } from "./hilbert.ts";
+
+export type Origin = {
+  id: number;
+  axis: Spherical;
+  quat: quat;
+  angle: Radians;
+  orientation: Orientation[];
+  firstQuintant: number;
+};
 
 const UP: vec3 = [0, 0, 1] as Cartesian;
 

@@ -2,15 +2,14 @@
 // SPDX-License-Identifier: Apache-2.0
 // Copyright (c) A5 contributors
 
-import { vec2, mat2, glMatrix } from 'gl-matrix';
+import { vec2, mat2, vec3, glMatrix } from 'gl-matrix';
 glMatrix.setMatrixArrayType(Float64Array as any);
-import { PentagonShape } from './utils';
-import { Origin } from './utils';
-import { movePointToFace, findNearestOrigin, isNearestOrigin } from './origin';
-import { projectDodecahedron } from './dodecahedron';
-import type { Face, LonLat, Polar, Radians } from './coordinate-systems';
-import { toLonLat, toPolar } from './coordinate-transforms';
-import { PI_OVER_5 } from './constants';
+import { PentagonShape } from './utils.ts';
+import { Origin, movePointToFace, findNearestOrigin, isNearestOrigin } from './origin.ts';
+import { projectDodecahedron } from './dodecahedron.ts';
+import type { Face, LonLat, Polar, Radians } from './coordinate-systems.ts';
+import { toLonLat, toPolar } from './coordinate-transforms.ts';
+import { PI_OVER_5 } from './constants.ts';
 
 // Reusable matrices to avoid recreation
 const rotation = mat2.create();

@@ -1,8 +1,9 @@
-import { describe, it, expect } from 'vitest'
-import { projectDodecahedron, unprojectDodecahedron } from 'a5/core/dodecahedron'
-import { origins } from 'a5/core/origin'
-import type { Polar } from 'a5/core/coordinate-systems'
-import TEST_COORDS from './test-polar-coordinates.json';
+import { describe, it } from "jsr:@std/testing/bdd";
+import { expect } from "jsr:@std/expect";
+import { projectDodecahedron, unprojectDodecahedron } from '../modules/core/dodecahedron.ts';
+import { origins } from '../modules/core/origin.ts';
+import type { Polar } from '../modules/core/coordinate-systems.ts';
+import TEST_COORDS from './test-polar-coordinates.json' with { type: 'json' };
 
 describe('Dodecahedron projection round trip', () => {
   it('round trip test', () => {

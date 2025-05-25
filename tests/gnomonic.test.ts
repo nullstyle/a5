@@ -1,7 +1,8 @@
-import { describe, it, expect } from 'vitest'
-import { projectGnomonic, unprojectGnomonic } from 'a5/core/gnomonic'
-import type { Polar, Spherical } from 'a5/core/coordinate-systems'
-import TEST_COORDS from './test-polar-coordinates.json';
+import { describe, it } from "jsr:@std/testing/bdd";
+import { expect } from "jsr:@std/expect";
+import { projectGnomonic, unprojectGnomonic } from '../modules/core/gnomonic.ts';
+import type { Polar, Spherical } from '../modules/core/coordinate-systems.ts';
+import TEST_COORDS from './test-polar-coordinates.json' with {type: 'json'};
 
 describe('projectGnomonic', () => {
   const TEST_VALUES = [

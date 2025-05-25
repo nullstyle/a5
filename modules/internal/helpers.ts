@@ -4,11 +4,11 @@
 
 import { vec2, mat2, glMatrix } from 'gl-matrix';
 glMatrix.setMatrixArrayType(Float64Array as any);
-import { fromLonLat, toFace } from '../core/coordinate-transforms';
-import type { LonLat, Face } from '../core/coordinate-systems';
-import { findNearestOrigin } from '../core/origin';
-import { unprojectDodecahedron } from '../core/dodecahedron';
-import { PI_OVER_5 } from '../core/constants';
+import { fromLonLat, toFace } from '../core/coordinate-transforms.ts';
+import type { LonLat, Face } from '../core/coordinate-systems.ts';
+import { findNearestOrigin } from '../core/origin.ts';
+import { unprojectDodecahedron } from '../core/dodecahedron.ts';
+import { PI_OVER_5 } from '../core/constants.ts';
 
 const rotation = mat2.create();
 const shift = vec2.create();

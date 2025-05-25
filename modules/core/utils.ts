@@ -4,18 +4,9 @@
 
 import {vec2, mat2, mat2d, vec3, glMatrix, quat} from 'gl-matrix';
 glMatrix.setMatrixArrayType(Float64Array as any);
-import type { Radians, Spherical, Cartesian, Face, Degrees, LonLat } from './coordinate-systems';
-import { Triangle } from './triangle';
-import { Orientation } from "./hilbert";
-
-export type Origin = {
-  id: number;
-  axis: Spherical;
-  quat: quat;
-  angle: Radians;
-  orientation: Orientation[];
-  firstQuintant: number;
-};
+import { Origin } from './origin.ts';
+import { Triangle } from './triangle.ts';
+import type { Degrees, LonLat, Face } from './coordinate-systems.ts';
 
 export type Pentagon = [Face, Face, Face, Face, Face];
 
